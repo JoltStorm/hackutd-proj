@@ -5,8 +5,8 @@ import { useState } from 'react'
 
 function App(){
   return(
-    <div className="text-3xl flex justify-between">
-        <h1>test</h1>
+    <div className="bg-blue-900">
+        <p>test</p>
     </div>
   )
 }
