@@ -1,0 +1,9 @@
+.resource-container {
+	width: 430px;
+	height: 40px;
+}
+
+.resource-label {
+	color: white;
+	font-size: 24px;
+}
