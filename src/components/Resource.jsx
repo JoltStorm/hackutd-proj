@@ -2,17 +2,11 @@ import { React, useState } from 'react'
 
 import './Resource.css'
 
-export default function Resource({ resourceName, resourceColor, amountState }) {
-	const style = {
-		backgroundColor: resourceColor
-	}
-
+export default function Resource({ resourceName, resourceColor, quantity }) {
 	return (
-		<>
-			<div style={style} className="resource-container flex justify-between">
-				<span className="resource-label">{resourceName}</span>
-				<span className="resource-label">{amountState}</span>
-			</div>
-		</>
+		<div style={{backgroundColor: resourceColor}} className="resource-container flex justify-between">
+			<span className="resource-label">{resourceName}</span>
+			<span className="resource-label">{quantity}</span>
+		</div>
 	)
 }
