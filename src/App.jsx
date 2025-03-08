@@ -5,9 +5,9 @@ import { useState } from 'react'
 
 function App(){
   return(
-    <div className="bg-blue-900">
-        <p>test</p>
-    </div>
+    <main>
+      <h1>test</h1>
+    </main>
   )
 }
 
