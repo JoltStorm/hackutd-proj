@@ -1,0 +1,14 @@
+.navbar {
+    width: 320px;
+    height: 1080px;
+    background-color: #000040;
+}
+
+.list-element {
+    width: 100%;
+    font-size: 24px;
+}
+
+.selected {
+    background-color: #001287;
+}
