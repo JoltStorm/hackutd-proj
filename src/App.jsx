@@ -11,6 +11,7 @@ function App() {
 			<Navbar />
 			<div className='flex ml-6 mt-2'>
 				<div className='m2'>
+          <h1 className="3xl text-white">Resources</h1>
 					<Resource resourceName="Hydrogen" resourceColor="#9D0000" quantity="10.0 L" />
 					<Resource resourceName="Oxygen" resourceColor="#007B9D" quantity="10.0 L" />
 					<Resource resourceName="Water" resourceColor="#13039E" quantity="10.0 L" />

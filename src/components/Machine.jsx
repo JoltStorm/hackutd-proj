@@ -3,7 +3,7 @@ import { React, useState} from 'react'
 import './Machine.css'
 
 
-export default function WaterCreationUnit({ MachineName, MachineQuantity }) {
+export default function Machine({ MachineName, MachineQuantity }) {
     const [unitsBuilt, setUnitsBuilt] = useState(MachineQuantity);
   
     return (
@@ -25,13 +25,25 @@ export default function WaterCreationUnit({ MachineName, MachineQuantity }) {
                 className="bg-green-600 text-white px-4 py-2 rounded-md"
                 onClick={() => setUnitsBuilt(unitsBuilt + 1)}
                 >
-                Build
+                +1
+                </button>
+                <button
+                className="bg-green-800 text-white px-4 py-2 rounded-md"
+                onClick={() => setUnitsBuilt(unitsBuilt + 10)}
+                >
+                +10
                 </button>
                 <button
                 className="bg-red-600 text-white px-4 py-2 rounded-md"
                 onClick={() => setUnitsBuilt(unitsBuilt > 0 ? unitsBuilt - 1 : 0)}
                 >
-                Remove
+                -1
+                </button>
+                <button
+                className="bg-red-600 text-white px-4 py-2 rounded-md"
+                onClick={() => setUnitsBuilt(unitsBuilt > 9 ? unitsBuilt - 10 : 0)}
+                >
+                -10
                 </button>
           </div>
         </div>
