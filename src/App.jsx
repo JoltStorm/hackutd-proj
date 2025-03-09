@@ -1,15 +1,16 @@
 import React from 'react'
-import PlanetPage from './components/pages/PlanetPage'
 import ShipPage from './components/pages/ShipPage'
+import PlanetPage from './pages/PlanetPage'
 import Navbar from './components/Navbar'
-
+import { EarthContext, EarthProvider } from './context/EarthContext'
 
 function App() {
 	return (
 		<div className='flex'>
 			<Navbar />
-			<PlanetPage />
-			<ShipPage />
+			<EarthProvider>
+				<PlanetPage />
+			</EarthProvider>
 		</div>
 	)
 }
