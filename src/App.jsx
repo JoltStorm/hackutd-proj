@@ -2,7 +2,7 @@ import React from 'react'
 import ShipPage from './components/pages/ShipPage'
 import PlanetPage from './pages/PlanetPage'
 import Navbar from './components/Navbar'
-import { EarthContext, EarthProvider } from './components/context/EarthContext'
+import { EarthContext, EarthProvider } from './context/EarthContext'
 
 function App() {
 	return (

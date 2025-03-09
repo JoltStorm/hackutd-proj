@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from 'react'
 
-import resourceObj from '../../utils/ResourceUtils'
-import machineObj from '../../utils/MachineUtils'
+import resourceObj from '../utils/ResourceUtils'
+import machineObj from '../utils/MachineUtils'
 
 export const EarthContext = createContext()
 
