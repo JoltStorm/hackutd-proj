@@ -1,3 +1,5 @@
-import { useState } from "react";
+import { react, useState } from "react";
 
-/* nothing here 4 now */
+export default function Upgrade(){
+    console.log("temp")
+}

@@ -1,12 +1,17 @@
 import { useContext, useState } from 'react'
 import { createContext } from 'react'
 
-export const ShipContext = createContext(null)
+export const ShipContext = createContext({});
 
 export const ShipProvider = ({ children }) => {
     const [state, setState] = useState({
         upgrades: {
-            engineSpeed: { name: "Engine Speed" } /* just name for now until other systems are made */
+            engineSpeed: { name: "Engine Speed" }, /* just name for now until other systems are made */
+            ScannerRange: { name: "Scanner Range"}
         }
     })
+
+    return(
+        console.log("temp")
+    )
 }
