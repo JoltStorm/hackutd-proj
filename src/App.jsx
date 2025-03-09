@@ -1,7 +1,6 @@
 import React from 'react'
-import PlanetPage from './components/pages/PlanetPage'
+import PlanetPage from './pages/PlanetPage'
 import Navbar from './components/Navbar'
-
 
 function App() {
 	return (
