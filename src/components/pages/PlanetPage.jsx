@@ -12,7 +12,13 @@ export default function Planet() {
         </div>
         <div className="">
             <h1 className="text-white text-3xl">Machines</h1>
-            <Machine MachineName="Water Creation Unit" MachineQuantity={25} />
+            <Machine machineName="Water Creation Unit" machineQuantity={25} inputResources={[
+                { color: "#9D0000", usage: 10 }, { color: "#007B9D", usage: 5 }
+            ]} outputResources={[
+                { color: "#13039E", usage: 5 }
+            ]} costResources={[
+                { color: "#646179", usage: 50 }
+            ]} />
         </div>
     </div>
 }
