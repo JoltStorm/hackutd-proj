@@ -2,27 +2,26 @@ import { useState } from 'react'
 
 import Resource from '../components/Resource'
 import Machine from '../components/Machine'
-import { EarthContext } from '../context/EarthContext'
+
+import { useEarthContext } from '../context/EarthContext'
 
 export default function Planet() {
-    return <EarthContext>
+    const { state } = useEarthContext()
+
+    return (
         <div className='flex space-x-4 ml-6 mt-2'>
             <div className=''>
                 <h1 className="text-white text-3xl">Resources</h1>
-                <Resource resourceName="Hydrogen" resourceColor="#9D0000" quantity="10.0 L" />
-                <Resource resourceName="Oxygen" resourceColor="#007B9D" quantity="10.0 L" />
-                <Resource resourceName="Water" resourceColor="#13039E" quantity="10.0 L" />
+                {state.resources.map(resource =>
+                    <Resource key={resource.name} resourceName={resource.name} resourceColor={resource.color} quantity={resource.amount} solid={resource.solid} />
+                )}
             </div>
             <div className="">
                 <h1 className="text-white text-3xl">Machines</h1>
-                <Machine machineName="Water Creation Unit" machineQuantity={25} inputResources={[
-                    { color: "#9D0000", usage: 10 }, { color: "#007B9D", usage: 5 }
-                ]} outputResources={[
-                    { color: "#13039E", usage: 5 }
-                ]} costResources={[
-                    { color: "#646179", usage: 50 }
-                ]} />
+                {state.machines.map(machine =>
+                    <Machine key={machine.name} machineName={machine.name} machineQuantity={machine.amount} inputResources={machine.inputResources} outputResources={machine.outputResources} costResources={machine.costResources} />
+                )}
             </div>
         </div >
-    </EarthContext>
+    )
 }
