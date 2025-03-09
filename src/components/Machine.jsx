@@ -3,21 +3,32 @@ import { React, useState } from 'react'
 import './Machine.css'
 
 
-export default function WaterCreationUnit({ MachineName, MachineQuantity }) {
-  const [unitsBuilt, setUnitsBuilt] = useState(MachineQuantity);
+export default function Machine({ machineName, machineQuantity, inputResources, outputResources, costResources }) {
+	const [unitsBuilt, setUnitsBuilt] = useState(machineQuantity);
 
-  return (
-    <div className=" text-white w-96">
-      <div className="bg-gray-300 p-4 text-black rounded-md">
-        <h2 className="text-xl">{MachineName}</h2>
+	const inputs = inputResources.map(resource =>
+		<div key={resource.color} style={{ backgroundColor: resource.color }} className="text-white text-sm w-40">-{resource.usage * machineQuantity} L/s (-{resource.usage}/s indv)</div>
+	)
+	const outputs = outputResources.map(resource =>
+		<div key={resource.color} style={{ backgroundColor: resource.color }} className="text-white text-sm w-40">+{resource.usage * machineQuantity} L/s (+{resource.usage}/s indv)</div>
+	)
+	const costs = costResources.map(resource =>
+		<div key={resource.color} style={{ backgroundColor: resource.color }} className="text-white text-sm w-20">{resource.usage} g</div>
+	)
 
-        <p className="text-xl">Input</p>
-        <div className="bg-red-600 text-white px-2 py-1 text-sm w-40">-250 L/s (-10/s indv)</div>
-        <div className="bg-cyan-600 text-white px-2 py-1 text-sm w-40">-125 L/s (-5/s indv)</div>
-        <p className="text-xl">Output</p>
-        <div className="bg-blue-700 text-white px-2 py-1 text-sm w-40">+125 L/s (+5/s indv)</div>
+	return (
+		<div className=" text-white w-96">
+			<div className="bg-gray-300 p-4 text-black rounded-md">
+				<h2 className="text-xl">{machineName}</h2>
 
-        <p>Cost to build unit: 50</p>
+				<p className="text-xl">Input</p>
+				{inputs}
+				<p className="text-xl">Output</p>
+				{outputs}
+				<p className="text-xl">Cost</p>
+				{costs}
+
+
         <p>Units built: {unitsBuilt}</p>
         <div className="flex gap-2">
           <button
