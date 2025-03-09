@@ -28,22 +28,35 @@ export default function Machine({ machineName, machineQuantity, inputResources, 
 				<p className="text-xl">Cost</p>
 				{costs}
 
-				<p>Units built: {unitsBuilt}</p>
-				<div className="flex gap-2">
-					<button
-						className="bg-green-600 text-white px-4 py-2 rounded-md"
-						onClick={() => setUnitsBuilt(unitsBuilt + 1)}
-					>
-						Build
-					</button>
-					<button
-						className="bg-red-600 text-white px-4 py-2 rounded-md"
-						onClick={() => setUnitsBuilt(unitsBuilt > 0 ? unitsBuilt - 1 : 0)}
-					>
-						Remove
-					</button>
-				</div>
-			</div>
-		</div>
-	)
+
+        <p>Units built: {unitsBuilt}</p>
+        <div className="flex gap-2">
+          <button
+            className="bg-green-600 text-white px-4 py-2 rounded-md"
+            onClick={() => setUnitsBuilt(unitsBuilt + 1)}
+          >
+            +1
+          </button>
+          <button
+            className="bg-green-800 text-white px-4 py-2 rounded-md"
+            onClick={() => setUnitsBuilt(unitsBuilt + 10)}
+          >
+            +10
+          </button>
+          <button
+            className="bg-red-600 text-white px-4 py-2 rounded-md"
+            onClick={() => setUnitsBuilt(unitsBuilt > 0 ? unitsBuilt - 1 : 0)}
+          >
+            -1
+          </button>
+          <button
+            className="bg-red-800 text-white px-4 py-2 rounded-md"
+            onClick={() => setUnitsBuilt(unitsBuilt > 9 ? unitsBuilt - 10 : 0)}
+          >
+            -10
+          </button>
+        </div>
+      </div>
+    </div>
+  )
 }
