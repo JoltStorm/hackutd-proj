@@ -1,25 +1,34 @@
-import { useContext, useState } from 'react'
-import { createContext } from 'react'
+import { createContext, useContext, useState } from 'react'
+
+import resourceObj from '../../utils/ResourceUtils'
+import machineObj from '../../utils/MachineUtils'
 
 export const EarthContext = createContext()
 
 export const EarthProvider = ({ children }) => {
     const [state, setState] = useState({
-        resources: {
-            hydrogen: { name: "Hydrogen", color: "red", amount: 0 },
-            oxygen: { name: "Oxygen", color: "red", amount: 0 },
-            water: { name: "Water", color: "red", amount: 0 }
-        },
-        machines: {}
+        resources: [
+            resourceObj('hydrogen', 0),
+            resourceObj('oxygen', 0),
+            resourceObj('water', 0),
+            resourceObj('iron', 10)
+        ],
+        machines: [
+            machineObj("Water Synthesizer", 0,
+                [resourceObj('hydrogen', 10), resourceObj('oxygen', 5)],
+                [resourceObj('water', 5)],
+                [resourceObj('iron', 50)]
+            ),
+        ]
     })
 
     return (
-        <GameContext.Provider value={{ state }}>
+        <EarthContext.Provider value={{ state }}>
             {children}
-        </GameContext.Provider>
+        </EarthContext.Provider>
     )
 }
 
-export const useGameContext = () => {
-    return useContext(GameContext)
+export const useEarthContext = () => {
+    return useContext(EarthContext)
 }

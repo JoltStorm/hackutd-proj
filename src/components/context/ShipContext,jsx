@@ -12,6 +12,13 @@ export const ShipProvider = ({ children }) => {
     })
 
     return(
+        /*<ShipContext.Provider value = { state }>
+            {children}
+        </ShipContext.Provider>*/
         console.log("temp")
     )
+}
+
+export const useShipContext = () => {
+    return useContext(ShipContext)
 }

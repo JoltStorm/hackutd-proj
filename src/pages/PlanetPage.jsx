@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Resource from '../components/Resource'
 import Machine from '../components/Machine'
 
-import { useEarthContext } from '../context/EarthContext'
+import { useEarthContext } from '../components/context/EarthContext'
 
 export default function Planet() {
     const { state } = useEarthContext()
